@@ -1,0 +1,145 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.header{
+
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    
+   
+}
+.logo{
+    display: flex;
+    justify-content: flex-start;
+    width: 90%;
+}
+.logo img{
+    width: 20%;
+}
+.dados{
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    justify-content: space-between;
+    color: white;
+    width:50%;
+}
+.fotos{
+    background: linear-gradient(rgb(60,1,60),darkred);
+    background-color: rgb(60,1,60);
+    display: flex;
+    justify-content:left;
+
+}
+.fotos img{
+    width: 40%;
+}
+.fotos .texto{
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    gap:5%;
+    height: 72vh;
+    
+}
+.div{
+    display: flex;
+    justify-content: space-between;  
+    background-color: rgb(60,1,60);
+}
+.div .texto2{
+    margin: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+
+}
+li{
+    margin-top: 10px;
+    list-style: none;
+    
+}
+.div img{
+    width: 100%;
+}
+.texto2 li{
+    color:rgb(197, 186, 186);
+}
+.texto2 ul{
+    color: white;
+}
+.texto li{
+    color: rgb(197, 186, 186);
+}
+.texto h2{
+    color: rgb(197, 186, 186);
+}
+.hashiras{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(202, 190, 190);
+
+}
+.hashiras img{
+    width: 100%;
+    background-size: cover;
+
+}
+.apresentacao1 h2{
+    border: solid black;
+    display: flex;
+    justify-content: center;
+     background-color: darkred;
+    padding: 10px;
+}
+.apresentacao{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: rgb(200, 164, 164);
+    flex-direction: column;
+}
+.apresentacao h2{
+    padding-bottom: 15px;
+}
+.imghashira{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(200, 164, 164);
+    flex-direction: column;
+    
+
+}
+.imghashira img{
+    width: 10%;
+    background: linear-gradient(rgb(200,164,164),rgb(255, 148, 148));
+    
+}
+.geral{
+    margin: 0px;
+    text-align: center;
+}
+.imghashira .card{
+    display: flex;
+    justify-content: left;
+    
+}
+.imghashira .pilar{
+    border: solid rgb(200, 164, 164);
+}
+
+
+
+
+
+
+
+
+
+
+
