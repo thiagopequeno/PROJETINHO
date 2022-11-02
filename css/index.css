@@ -13,12 +13,14 @@
     
    
 }
+
 .logo{
     display: flex;
     justify-content: flex-start;
-    width: 90%;
+    width: 90%
 }
 .logo img{
+    
     width: 20%;
 }
 .dados{
@@ -91,11 +93,13 @@ li{
 
 }
 .apresentacao1 h2{
+    color: white;
     border: solid black;
     display: flex;
     justify-content: center;
-     background-color: darkred;
+    background: linear-gradient(to bottom,darkred,darkblue);
     padding: 10px;
+    
 }
 .apresentacao{
     display: flex;
@@ -119,6 +123,7 @@ li{
     width: 10%;
     background: linear-gradient(rgb(200,164,164),rgb(255, 148, 148));
     
+    
 }
 .geral{
     margin: 0px;
@@ -130,10 +135,113 @@ li{
     
 }
 .imghashira .pilar{
-    border: solid rgb(200, 164, 164);
+    border:solid pink;
+}
+.luas{
+    color: white;
+    text-align: center;
+    background: linear-gradient(to top,rgb(255, 0, 0),black);
+
+}
+.luas h2{
+    padding: 5px;
+}
+.respiracao{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    border: solid white;
+}
+.poder{
+    padding: auto;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.poder img{
+    width: 350px;
+}
+.imgluas{
+    background-color: black;
+}
+.imgluas img{
+    width: 100%;
+    /* border: solid rgb(0, 0, 0); */
+}
+.apresentacaolua{
+    color: white;
+    text-align: center;
+    background-color: black;
+}
+.apresentacaolua1{
+    color: white;
+    text-align: center;
+   background: linear-gradient(rgb(0, 0, 0),darkred);
+   padding: 15px;
+}
+.super{
+    color: white;
+    display: flex;
+    background-color:rgb(100, 1, 1);
+    border: solid black;
+}
+.super img{
+    display: flex;
+    /* background-color: aqua; */
+    justify-content: flex-start;
+    width: 40vh;
+    background: linear-gradient(to top,darkred,black);
+
+}
+span{
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+}
+.arma{
+    border: solid black;
+    background: linear-gradient(to top,rgb(60,1,60),darkred);
+    color: rgb(255, 255, 255);
+}
+.espada{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.espada img{
+    width: 30%;
+}
+.armas{
+    display: flex;
+    justify-content: space-between;
+}
+.armas .marca{
+    padding: 25px;
+    background: linear-gradient(to top,rgb(60,1,60),darkred);
+    color: rgb(197, 186, 186);
+    
+}
+.armas .espada1{
+    padding: 25px;
+    background: linear-gradient(to top,rgb(60,1,60),darkred);
+    color: rgb(197, 186, 186);
+    
+
 }
 
+.spoiler{
+    background-color:black;
+    color: white;
+}
+.yorichi img{
+    width: 100% ;
+    
+}
+.yorichi{
+    text-align: center;
+    background-color: black;
+    color: white;
 
+}
 
 
 
