@@ -75,8 +75,12 @@ form{
     height: 65vh;
     width:50vh;
 }
+a img{
+    width: 10%;
+}
 body{
    background-image: url("https://images6.alphacoders.com/905/905648.jpg");
+   overflow: hidden;
 }
 *{
     padding: 0;

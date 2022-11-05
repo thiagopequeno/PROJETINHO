@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 .header{
@@ -31,6 +32,15 @@
     justify-content: space-between;
     color: white;
     width:50%;
+}
+.dados button{
+    background-color: rgb(0, 0, 0);
+    color: red;
+    cursor: pointer;
+}
+.dados a{
+    text-decoration: none;
+    color:red;
 }
 .fotos{
     background: linear-gradient(rgb(60,1,60),darkred);
@@ -199,7 +209,8 @@ span{
 }
 .arma{
     border: solid black;
-    background: linear-gradient(to top,rgb(60,1,60),darkred);
+    background: linear-gradient(to bottom,rgb(60,1,60),darkred);
+    
     color: rgb(255, 255, 255);
 }
 .espada{

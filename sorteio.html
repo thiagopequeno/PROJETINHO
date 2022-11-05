@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/sorteio.css">
+    <title>Cadastro/sorteio</title>
+</head>
+
+<body>
+    <div class="header">
+        <img src=".//img/telasorteio.png" alt="">
+
+    </div>
+    <!-- imagens -->
+
+       <div class="geral">
+           <div class="parte1">
+               <input type="text" placeholder="escolha um personagem" id="id_perso" style="background-color: rgb(0, 0, 0);" >
+               <button onclick="cadastrar()">Cadastrar Personagens</button><br>
+               <button onclick="ver()">Ver Personagem cadastrado</button>
+            </div>
+            
+            <img src="./img/demo.jpg" alt="">
+
+
+        
+    </div>
+    
+
+
+
+
+
+    <div class="parte2">
+        <img src="" id="tanjiro">
+        <img src="" id="zenitsu">
+        <img src="" id="inosuke">
+        <img src="" id="rengoku">
+        <img src="" id="shinobu">
+        <img src="" id="tomioka">
+        <img src="" id="uzui">
+        <img src="" id="sanemi">
+        <img src="" id="mitsuri">
+        <img src="" id="nezuko">
+        <img src="" id="obanai">
+        <img src="" id="gyomei">
+        <img src="" id="muichiro">
+        <img src="" id="kokushibo">
+        <img src="" id="douma">
+        <img src="" id="akaza">
+        <img src="" id="hantegu">
+        <img src="" id="nakime">
+        <img src="" id="gyokko">
+        <img src="" id="gyutaro">
+        <img src="" id="daki">
+        <img src="" id="kaigaku">
+        <img src="" id="muzan">
+    </div>
+aaaaaaaaaaaa    
+aaaaaaaaaaa
+</body>
+
+</html>
+<script>
+    var personages = []
+    function cadastrar() {
+
+        personages.push(id_perso.value)
+        id_perso.value = ''
+        alert('Personagem cadastrado')
+
+    }
+    function ver() {
+        var pessoa = id_perso.value.toLowerCase()
+        // if(pessoa=='tanjiro'||pessoa=='inosuke'||pessoa=='zenitsu'||pessoa=='rengoku'||pessoa=='shinobu'||'tomioka'||pessoa=='sanemi'||pessoa=='mitsuri'||pessoa=='uzui'||pessoa=='nezuko'||pessoa=='obanai'||pessoa=='gyomei'||pessoa=='muichiro'||pessoa=='kokushibo'||pessoa=='muzan'||pessoa=='douma'||pessoa=='akaza'||pessoa=='hantengu'||pessoa=='nakime'||pessoa=='gyokko'||pessoa=='gyutaro'||pessoa=='daki'||pessoa=='Kaigaku'){
+
+        if (personages.length > -1) {
+            console.log('entrou');
+            for (var contador = 0; contador <= personages.length - 1; contador++) {
+                console.log('entrou no for');
+
+                if (personages[contador] == 'tanjiro') {
+                    tanjiro.src = "https://static.wikia.nocookie.net/liberproeliis/images/e/e9/Kamado.Tanjirou.full.2852812.png/revision/latest?cb=20200417163440&path-prefix=pt-br"
+
+                } else if (personages[contador] == 'zenitsu') {
+                    zenitsu.src = "https://i.pinimg.com/originals/83/95/c6/8395c6305b38e7526311fa9fb4ea1865.png"
+
+                } else if (personages[contador] == 'inosuke') {
+                    inosuke.src = "https://static.wikia.nocookie.net/liberproeliis/images/9/94/Inosuke_anime_design.png/revision/latest?cb=20200417154720&path-prefix=pt-br"
+
+                } else if (personages[contador] == 'rengoku') {
+                    rengoku.src = "https://static.wikia.nocookie.net/animeverso/images/5/52/Kyojuro_Rengoku.png/revision/latest?cb=20220813153324&path-prefix=pt-br"
+
+                } else if (personages[contador] == 'shinobu') {
+                    shinobu.src = "https://assets.stickpng.com/images/5ede48f7b760540004f2c5e0.png"
+
+                } else if (personages[contador] == 'tomioka') {
+                    tomioka.src = "https://static.wikia.nocookie.net/liberproeliis/images/5/54/4592.png/revision/latest?cb=20200418165914&path-prefix=pt-br"
+                }
+                else if (personages[contador] == 'sanemi') {
+                    sanemi.src = "https://cdn130.picsart.com/341353876024211.png"
+                }
+                else if (personages[contador] == 'mitsuri') {
+                    mitsuri.src = 'https://static.wikia.nocookie.net/liberproeliis/images/7/74/Mitsuri_anime.png/revision/latest?cb=20200419161718&path-prefix=pt-br'
+                }
+                else if (personages[contador] == 'uzui') {
+                    uzui.src = "https://static.wikia.nocookie.net/animeverso/images/3/34/Tengen-Uzui-869x1024.png/revision/latest?cb=20220814205322&path-prefix=pt-br"
+
+                } else if (personages[contador] == 'nezuko') {
+                    nezuko.src = "https://static.wikia.nocookie.net/liberproeliis/images/2/2f/Nezuko_anime_design.png/revision/latest?cb=20200416224847&path-prefix=pt-br"
+                }
+                else if (personages[contador] == 'obanai') {
+                    obanai.src = "https://static.wikia.nocookie.net/liberproeliis/images/3/39/Obanai_anime_%281%29.png/revision/latest?cb=20200703030522&path-prefix=pt-br"
+                } else if (personages[contador] == 'gyomei') {
+                    gyomei.src = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ca3b8950-88c9-4e55-aa64-164a622371bc/df3mfzp-702a7119-5c54-40bc-9751-4152c7526e97.png/v1/fill/w_770,h_1038,strp/gyomei_himejima_png_by_dflp3_by_dflp3_df3mfzp-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTcyNiIsInBhdGgiOiJcL2ZcL2NhM2I4OTUwLTg4YzktNGU1NS1hYTY0LTE2NGE2MjIzNzFiY1wvZGYzbWZ6cC03MDJhNzExOS01YzU0LTQwYmMtOTc1MS00MTUyYzc1MjZlOTcucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.8GraF7jzd2FRH8qWI4OvSr5zLhHd9mAu4N6aeYczBoU"
+                } else if (personages[contador] == 'muichiro') {
+                    muichiro.src = "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/e/ee/Muichiro_Tokito_%28anime%29.png/revision/latest?cb=20210430223538&path-prefix=pt-br"
+                } else if (personages[contador] == 'kokushibo') {
+                    kokushibo.src = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/93f37be2-d346-40d1-ad11-3be570416e52/dewpspa-685640cc-b88f-45cf-b2f7-93a13d523abb.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzkzZjM3YmUyLWQzNDYtNDBkMS1hZDExLTNiZTU3MDQxNmU1MlwvZGV3cHNwYS02ODU2NDBjYy1iODhmLTQ1Y2YtYjJmNy05M2ExM2Q1MjNhYmIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ksGkcDpEZW_PI6IdC4TMiUmtDYwm13ZxqmbqXvKODVY"
+                } else if (personages[contador] == 'douma') {
+                    douma.src = "https://i.pinimg.com/originals/a8/1e/66/a81e664a1c96ba06a56c4802c439f89a.png"
+
+                } else if (personages[contador] == 'akaza') {
+                    akaza.src = "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/e/e1/Akaza_Full_Body_Design_%28Anime%29.png/revision/latest?cb=20211013090054"
+                } else if (personages[contador] == 'hantegu') {
+                    hantegu.src = "https://uploads-ssl.webflow.com/6215709a2879ceb5988bb02e/621eca4555e2c416ea1578db_Hantengu.png"
+                } else if (personages[contador] == 'nakime') {
+                    nakime.src = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/50dad8da-ce58-4540-a042-1313d34b7e56/de33e8l-276d5882-b2ed-4587-bc72-888501ff29b5.png/v1/fit/w_414,h_278,strp/kimetsunoyaiba_by_dt501061_de33e8l-414w.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTYyMyIsInBhdGgiOiJcL2ZcLzUwZGFkOGRhLWNlNTgtNDU0MC1hMDQyLTEzMTNkMzRiN2U1NlwvZGUzM2U4bC0yNzZkNTg4Mi1iMmVkLTQ1ODctYmM3Mi04ODg1MDFmZjI5YjUucG5nIiwid2lkdGgiOiI8PTE0MzE3In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.l1cJxZ22T31mI9Zy1t_Qwq--buqxirg5QSVw8-lUlK4"
+                }
+                else if (personages[contador] == 'gyokko')
+                    gyokko.src = "https://static.wikia.nocookie.net/liberproeliis/images/d/d3/1593973330888.png/revision/latest?cb=20200705205035&path-prefix=pt-br"
+                else if (personages[contador] == "gyutaro") {
+                    gyutaro.src = "https://static.wikia.nocookie.net/monster-strike-enjp/images/6/6b/6161.png/revision/latest?cb=20220413001341"
+                } else if (personages[contador] == 'daki') {
+                    daki.src = "https://i.pinimg.com/originals/e3/95/a0/e395a00db9bc33e95d12b094ce9142de.png"
+                }
+                else if (personages[contador] == 'kaigaku') {
+                    kaigaku.src = "https://static.wikia.nocookie.net/liberproeliis/images/2/24/1593982011962.png/revision/latest?cb=20200705214841&path-prefix=pt-br"
+                } else if (personages[contador] == 'muzan') {
+                    muzan.src = "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/0/0e/Muzan_Kibutsuji_Full_Body_%28Anime%29.png/revision/latest?cb=20210731042132"
+                }
+
+            }
+
+
+
+        }
+
+
+
+
+
+
+    }
+
+
+
+
+
+</script>

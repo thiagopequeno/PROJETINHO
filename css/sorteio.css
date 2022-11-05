@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+body{
+    background-color: black;
+}
+.header{
+    display: flex;
+    /* background: linear-gradient(to bottom,rgb(67, 1, 58),black); */
+    background-color: rgb(0, 0, 0);
+    border: solid black;
+    justify-content: center;
+    width: 98%
+}
+.header img{
+    display: flex;
+    justify-content: center;
+    width: 40%;
+}
+input{
+    color: white;
+}
+.parte1{
+    display: flex;
+    /* background: linear-gradient(to right,rgb(67, 1, 58),black); */
+    background: linear-gradient(black,darkred);
+    flex-direction: column;
+    height: 76vh;
+    width: 50vh;
+}
+.geral .fundo img{
+    
+    display: flex;
+    justify-content: right;
+}
+
+
+.geral{
+    display: flex;
+    background: linear-gradient(black,darkred);
+    justify-content: space-between;
+}
+.geral img{
+    display: flex;
+    width: 70%;
+}
+button{
+    border-radius: 20%;
+    background-color: white;
+}
+.parte2 img{
+    width: 20%;
+    border: solid white;
+
+}
+.parte2{
+    background-color: rgb(255, 255, 255);
+}
+.final{
+    background-color: black;
+}
