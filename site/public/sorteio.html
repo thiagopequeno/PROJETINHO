@@ -11,30 +11,35 @@
 
 <body>
     <div class="header">
-        <img src=".//img/telasorteio.png" alt="">
+        <img src=".//img/telacadastro.png" alt="">
 
+    </div>
+    <div class="dash">
+        <button></button>
     </div>
     <!-- imagens -->
 
-       <div class="geral">
-           <div class="parte1">
-               <input type="text" placeholder="escolha um personagem" id="id_perso" style="background-color: rgb(0, 0, 0);" >
-               <button onclick="cadastrar()">Cadastrar Personagens</button><br>
-               <button onclick="ver()">Ver Personagem cadastrado</button>
-            </div>
-            
-            <img src="./img/demo.jpg" alt="">
+    <div class="geral">
+        <div class="parte1">
+            <input type="text" placeholder="escolha um personagem" id="id_perso"
+                style="background-color: rgb(0, 0, 0);">
+            <button onclick="cadastrar()">Cadastrar Personagens</button><br>
+            <button onclick="ver()">Ver Personagem cadastrado</button>
+        </div>
+
+        <img src="./img/demo.jpg" alt="">
 
 
-        
+
     </div>
-    
+
 
 
 
 
 
     <div class="parte2">
+
         <img src="" id="tanjiro">
         <img src="" id="zenitsu">
         <img src="" id="inosuke">
@@ -59,29 +64,32 @@
         <img src="" id="kaigaku">
         <img src="" id="muzan">
     </div>
-aaaaaaaaaaaa    
-aaaaaaaaaaa
+    aaaaaaaaaaaa
+    aaaaaaaaaaa
+
 </body>
 
 </html>
 <script>
     var personages = []
     function cadastrar() {
-
-        personages.push(id_perso.value)
-        id_perso.value = ''
-        alert('Personagem cadastrado')
-
+        p = id_perso.value
+        if (p == 'inosuke' || p == 'tanjiro' || p == 'zenitsu' || p == 'rengoku' || p == 'shinobu' || p == 'tomioka' || p == 'sanemi' || p == 'mitsuri' || p == 'uzui' || p == 'nezuko' || p == 'obanai' || p == 'gyomei' || p == 'muichiro' || p == 'kokushibo' || p == 'douma' || p == 'akaza' || p == 'hantegu' || p == 'nakime' || p == 'gyokko' || p == 'gyutaro' || p == 'daki' || p == 'kaigaku' || p == 'muzan') {
+            personages.push(id_perso.value)
+            id_perso.value = ''
+            alert('Personagem cadastrado')
+        }else{
+            alert('Esse personagem não está cadastrado em nosso site')
+        }
     }
     function ver() {
         var pessoa = id_perso.value.toLowerCase()
-        // if(pessoa=='tanjiro'||pessoa=='inosuke'||pessoa=='zenitsu'||pessoa=='rengoku'||pessoa=='shinobu'||'tomioka'||pessoa=='sanemi'||pessoa=='mitsuri'||pessoa=='uzui'||pessoa=='nezuko'||pessoa=='obanai'||pessoa=='gyomei'||pessoa=='muichiro'||pessoa=='kokushibo'||pessoa=='muzan'||pessoa=='douma'||pessoa=='akaza'||pessoa=='hantengu'||pessoa=='nakime'||pessoa=='gyokko'||pessoa=='gyutaro'||pessoa=='daki'||pessoa=='Kaigaku'){
 
         if (personages.length > -1) {
             console.log('entrou');
+
             for (var contador = 0; contador <= personages.length - 1; contador++) {
                 console.log('entrou no for');
-
                 if (personages[contador] == 'tanjiro') {
                     tanjiro.src = "https://static.wikia.nocookie.net/liberproeliis/images/e/e9/Kamado.Tanjirou.full.2852812.png/revision/latest?cb=20200417163440&path-prefix=pt-br"
 
@@ -160,4 +168,85 @@ aaaaaaaaaaa
 
 
 
+
+
+
+</script>
+<script>
+    const labels = [
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Temperatura',
+            backgroundColor: 'rgb(455, 100, blue)',
+            borderColor: 'rgb(455, 100, blue)',
+            data: [30, 26, 25, 23, 18, 13, 80, 90],
+        },
+            //   {
+            //     label: 'Umidade',
+            //     backgroundColor: 'rgb(455, 0, 0)',
+            //     borderColor: 'rgb(455, 0, 0)',
+            //     data: [10,20,30,40,50,60,70,80],
+            //   }
+        ]
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+    };
+
+
+    const labels2 = [
+        'janeiro',
+        'fevereiro',
+        'maio',
+        'abril',
+        'março',
+        'junho',
+    ];
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Temperatura media',
+            backgroundColor: 'rgb(0, 100, 0)',
+            borderColor: 'rgb(0,400,0)',
+            data: [24, 26, 28, 30, 24, 23, 80, 90],
+        },
+        {
+            label: 'Umidade media',
+            backgroundColor: 'rgb(455, 0, 0)',
+            borderColor: 'rgb(455, 0, 0)',
+            data: [80, 86, 83, 87, 79, 88, 89, 90, 100],
+        }
+        ]
+    };
+
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {}
+    };
+
+</script>
+<script>
+
+    const chart = new Chart(
+        document.getElementById('chart'),
+        config
+    );
+  //   const myChart2 = new Chart(
+  //   document.getElementById('myChart2'),
+  //   config2
+  // );
 </script>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/personagem.css">
+    <title>ROLETA</title>
+</head>
+<body>
+    <div class='img' style="background-color: black;">
+        <img src=".//img/telasorteio.png" alt="">
+    </div>
+
+    <div class="texto">
+        <h1>Veja se você será um caçador ou ONI</h1>
+        <h1>Olá usuario, você tem direito a um sorteio use com sabedoria</h1>
+        <h2>Ao apertar na roleta você será sorteado como um personagem, poderá ser Hashira,lua superior ou algum dos protagonista</h2>
+        <h3>Boa sorte!</h3>
+    </div>
+    <div class="roleta">
+        <!-- <img src="https://1.bp.blogspot.com/-tT24VuZcBig/YOAEy8AP3jI/AAAAAAAADjc/R1CH_bUebngzbBup2eX9gNp3vybbsdG_wCLcBGAsYHQ/s900/90ddc7ab9fbc45e32aa8c02880a9cdae.jpg" alt=""> -->
+        <img src="https://1.bp.blogspot.com/-1d3thoekDEo/YOHMZue9VfI/AAAAAAAADnw/56V-pp5hEVAQtDGPHazP8MQ35BaOhSELwCLcBGAsYHQ/s640/40b3cd64c8aa5ed3b0f554f4cb0fdc07.jpg" alt="">
+        <img src="https://psxbrasil.com.br/wp-content/uploads/2022/07/Demon-Slayer-Kimetsu-no-Yaiba-The-Hinokami-Chronicles_2022_07-14-22_001.jpg" alt="">
+        <img src="https://cdn.ome.lt/S4b-FpQBbBqntkwjS5keGKiJwPQ=/570x0/smart/uploads/conteudo/fotos/portada_inosuke-1024x576.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/2b/ee/66/2bee660fcfdcc407bd3e29b01cc5e1a3.jpg" alt="">
+
+        <div id="button"> <button onclick="roleta()"><img src="./img/ROLETA.png" alt=""></button> </div>
+
+        <img src="https://nerdhits.com.br/wp-content/uploads/2022/02/ZENITSU-1-1200x900.jpg" alt="">
+        <img src="https://criticalhits.com.br/wp-content/uploads/2021/11/Rengoku.jpg" alt="">
+        <img src="https://staticc.sportskeeda.com/editor/2022/05/19b33-16535694324378.png" alt="" class="sanemi">
+        <!-- <img src="https://nerdhits.com.br/wp-content/uploads/2022/08/Gyomei-Himejima.jpg" alt=""> -->
+        <img src="https://ovicio.com.br/wp-content/uploads/2021/08/20210820-ovicio-kimetsu-demonslayer-shinobu-555x555.jpg" alt="">
+        
+    </div>
+    <div>
+    <div id="mostra">
+        Seu personagem no universo de Demon Slayer aparecerá aqui!
+    </div>
+    <div id="ver">
+        
+    </div>
+    <img src="" id="aleatorio" alt="" width="75vh">
+
+
+
+
+</body>
+</html>
+
+<script>
+
+    function roleta(){
+
+        var roleta = parseInt(1+Math.random() * 10) 
+
+        console.log(roleta);
+    
+        if(roleta==8){
+            button.innerHTML=''
+            aleatorio.src='./img/Akaza_Full_Body_Design_29.jpg'
+        }else if(roleta==7){
+            button.innerHTML=''
+            aleatorio.src='./img/Obanai_anime_29.jpg'
+        }
+    }
+
+</script>

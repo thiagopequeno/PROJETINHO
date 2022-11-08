@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="chart-container" style="position: relative; height:20vh; width:40vw; display: flex;">
+        <canvas id="chart"></canvas>
+        <canvas id="myChart2"></canvas>
+    </div>
+</body>
+</html>
+<script>
+    const labels = [
+      '12:00',
+      '13:00',
+      '14:00',
+      '15:00',
+      '16:00',
+      '17:00',
+    ];
+  
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'Temperatura',
+        backgroundColor: 'rgb(455, 100, blue)',
+        borderColor: 'rgb(455, 100, blue)',
+        data: [30, 26, 25, 23, 18, 13, 80, 90],
+      },
+    //   {
+    //     label: 'Umidade',
+    //     backgroundColor: 'rgb(455, 0, 0)',
+    //     borderColor: 'rgb(455, 0, 0)',
+    //     data: [10,20,30,40,50,60,70,80],
+    //   }
+      ]
+    };
+  
+    const config = {
+      type: 'line',
+      data: data,
+      options: {}
+    };
+
+
+    const labels2 = [
+    'janeiro',
+    'fevereiro',
+    'maio',
+    'abril',
+    'março',
+    'junho',
+  ];
+
+  const data2 = {
+    labels: labels2,
+    datasets: [{
+      label: 'Temperatura media',
+      backgroundColor: 'rgb(0, 100, 0)',
+      borderColor: 'rgb(0,400,0)',
+      data: [24, 26, 28, 30,24, 23, 80, 90],
+    },
+    {
+      label: 'Umidade media',
+      backgroundColor: 'rgb(455, 0, 0)',
+      borderColor: 'rgb(455, 0, 0)',
+      data: [80,86, 83, 87, 79,88, 89, 90,100],
+    }
+    ]
+  };
+
+  const config2 = {
+    type: 'bar',
+    data: data2,
+    options: {}
+  };
+
+  </script>
+  <script>
+
+    const chart = new Chart(
+      document.getElementById('chart'),
+      config
+    );
+  //   const myChart2 = new Chart(
+  //   document.getElementById('myChart2'),
+  //   config2
+  // );
+  </script>
