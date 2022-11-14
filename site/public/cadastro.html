@@ -6,33 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cadastro.css">
-    <title>Document</title>
+    
+    <title>Cadastro</title>
 </head>
 
 <body>
-    <!-- <section class="principal"> -->
-    <a href="index.html">
-        <div class="logo">
-            <img src="img/logokimetsu.png" alt="" width="150px"><br>
-            <b class="logoTitle" style="color: RED;">DemonSlayer</b>
-            <button onclick="login()">Ir para login</button>
-        
-        </div>
-    </a>
+
+
+    <div class="logo">
+        <a href="index.html"> <img src="img/logokimetsu.png" alt="" width="150px"></a><br>
+        <!-- <b class="logoTitle" style="color: RED;">DemonSlayer</b> -->
+        <a href="./login.html"> <img src="./img/iralogin.png" alt="" width="150vh"></a>
+
+    </div>
+
 
     <div id="fora">
 
-        <form action="" class="form">
+        <!-- <form> -->
+        <div class="form">
             <!-- <img src="logokimetsu.png" alt="" width="250px"> -->
             <img src="img/cadastroa.png">
 
 
             <div class="input">
-                <input type="text" name="" id="nome_input" placeholder="usuario">
+                <input name="" id="nome_input" placeholder="usuario">
             </div>
 
             <div class="input">
-                <input type="text" id="email_input" placeholder="email">
+                <input id="email_input" placeholder="email">
             </div>
 
             <div class="input">
@@ -40,47 +42,87 @@
             </div>
 
             <div class="input">
-                <input type="text" name="" id="confirmacao_senha_input" placeholder="confirmar senha">
+                <input type="password" id="confirmacao_senha_input" placeholder="confirmar senha">
+            </div>
+            <div class="input">
+                <!-- <input  id="personagem_input" placeholder="Personagem favorito"> -->
+
+                <select name="" id="personagem_input">
+                    <option value="0">Escolha seu personagem</option>
+                    <option value="Rengoku">rengoku</option>
+                    <option value="Tanjirou">tanjiro</option>
+                    <option value="zenitsu">zenitsu</option>
+                    <option value="inosuke">inosuke</option>
+                    <option value="nezuko">nezuko</option>
+                    <option value="uzui">uzui</option>
+                    <option value="obanai">obanai</option>
+                    <option value="gyomei">gyomei</option>
+                    <option value="mitsuri">mitsuri</option>
+                    <option value="tomioka">tomioka</option>
+                    <option value="shinobu">shinobu</option>
+                    <option value="muichiro">muichiro</option>
+                    <option value="sanemi">sanemi</option>
+                    <option value="kokushibo">kukoshibo</option>
+                    <option value="douma">douma</option>
+                    <option value="akaza">akaza</option>
+                    <option value="hantegu">hantegu</option>
+                    <option value="nakime">nakime</option>
+                    <option value="gyokko">gyokko</option>
+                    <option value="gyultaro">gyultaro</option>
+                    <option value="daki">daki</option>
+                    <option value="kaigaku">kaigaku</option>
+                    <option value="muzan">muzan</option>
+                </select>
             </div>
             <div id="btn">
-                <button id='btn2' type="submit" onclick="cadastrar()">
+                <button id='btn2' onclick="cadastrar()">
                     <img src="img/cadastrar.png" alt="">
                 </button>
             </div>
-        </form>
+        </div>
+        <!-- </form> -->
     </div>
 
-    <!-- </section> -->
+
 </body>
 
 
 </html>
 
 <script>
-  
-    function cadastrar() {
-        // aguardar();
+    var favorito=[]
+    var contador=0
 
+    function cadastrar(){
+        favorito.push(personagem_input.value)
+        contador++
+        localStorage.setItem(contador,personagem_input.value); 
+
+        // IF contador IGUAL A  0   
+
+        // aguardar();
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var nomeVar = nome_input.value;
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var personagemVar = personagem_input.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == ""||personagemVar=='') {
             // cardErro.style.display = "block"
             // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            alert('campos em branco')
 
             finalizarAguardar();
-            return false;
+            // return false;
         }
-        // else {
-        //     setInterval(sumirMensagem, 5000)
+        //  else {
+        //      setInterval(sumirMensagem, 5000)
         // }
 
         // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
+        fetch("usuarios/cadastrar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -90,21 +132,20 @@
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
                 emailServer: emailVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
+                personagemServer:personagemVar
             })
         }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                cardErro.style.display = "block";
-
+                // cardErro.style.display = "block";
                 mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                window.location = "./login.html";
+                // setTimeout(() => {
+                // }, "2000")
 
-                setTimeout(() => {
-                    window.location("login.html");
-                }, "2000")
-                
                 limparFormulario();
                 finalizarAguardar();
             } else {
@@ -117,12 +158,12 @@
 
         return false;
     }
-    function login(){
-        window.location.href='login.html'
+
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
     }
-     
-    // function sumirMensagem() {
-        // cardErro.style.display = "none"
-    // }
+
+
 
 </script>

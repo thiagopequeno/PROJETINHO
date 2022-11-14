@@ -10,7 +10,7 @@ body{
     background-image:url("../img/demo.jpg");
     background-size: cover;
 }
-form {
+.form {
     position: relative;
     top: 50%;
     left: 50%;
@@ -22,9 +22,11 @@ form {
 
 }
 .logo{
+    display: flex;
     margin-top: 15px;
     height: 3rem;
-    justify-content: end;
+    justify-content: space-between;
+
 }
 .logoTitle{
     text-decoration: none;
@@ -53,10 +55,10 @@ a{
     margin-top: 1rem;
 }
 
-form{
+.form{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
 }
 input{
@@ -65,6 +67,7 @@ input{
     border: 0;
     outline: 0 solid transparent;
     transition: .2s ease;
+    color: white;
 
 }
 

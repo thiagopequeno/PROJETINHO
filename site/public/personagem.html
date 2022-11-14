@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,62 +8,173 @@
     <link rel="stylesheet" href="css/personagem.css">
     <title>ROLETA</title>
 </head>
+
 <body>
+    <a href="index.html">
+    <div class="voltar"> <button>Voltar ao Index</button></div>
+</a>
     <div class='img' style="background-color: black;">
         <img src=".//img/telasorteio.png" alt="">
     </div>
 
     <div class="texto">
         <h1>Veja se você será um caçador ou ONI</h1>
-        <h1>Olá usuario, você tem direito a um sorteio use com sabedoria</h1>
-        <h2>Ao apertar na roleta você será sorteado como um personagem, poderá ser Hashira,lua superior ou algum dos protagonista</h2>
+        <h1>Olá, você tem direito a um sorteio use com sabedoria</h1>
+        <h2>Ao apertar na roleta você será sorteado como um personagem, poderá ser Hashira,lua superior ou algum dos
+            protagonista</h2>
         <h3>Boa sorte!</h3>
     </div>
     <div class="roleta">
         <!-- <img src="https://1.bp.blogspot.com/-tT24VuZcBig/YOAEy8AP3jI/AAAAAAAADjc/R1CH_bUebngzbBup2eX9gNp3vybbsdG_wCLcBGAsYHQ/s900/90ddc7ab9fbc45e32aa8c02880a9cdae.jpg" alt=""> -->
-        <img src="https://1.bp.blogspot.com/-1d3thoekDEo/YOHMZue9VfI/AAAAAAAADnw/56V-pp5hEVAQtDGPHazP8MQ35BaOhSELwCLcBGAsYHQ/s640/40b3cd64c8aa5ed3b0f554f4cb0fdc07.jpg" alt="">
-        <img src="https://psxbrasil.com.br/wp-content/uploads/2022/07/Demon-Slayer-Kimetsu-no-Yaiba-The-Hinokami-Chronicles_2022_07-14-22_001.jpg" alt="">
-        <img src="https://cdn.ome.lt/S4b-FpQBbBqntkwjS5keGKiJwPQ=/570x0/smart/uploads/conteudo/fotos/portada_inosuke-1024x576.jpg" alt="">
+        <img src="https://1.bp.blogspot.com/-1d3thoekDEo/YOHMZue9VfI/AAAAAAAADnw/56V-pp5hEVAQtDGPHazP8MQ35BaOhSELwCLcBGAsYHQ/s640/40b3cd64c8aa5ed3b0f554f4cb0fdc07.jpg"
+            alt="">
+        <img src="https://psxbrasil.com.br/wp-content/uploads/2022/07/Demon-Slayer-Kimetsu-no-Yaiba-The-Hinokami-Chronicles_2022_07-14-22_001.jpg"
+            alt="">
+        <img src="https://cdn.ome.lt/S4b-FpQBbBqntkwjS5keGKiJwPQ=/570x0/smart/uploads/conteudo/fotos/portada_inosuke-1024x576.jpg"
+            alt="">
         <img src="https://i.pinimg.com/736x/2b/ee/66/2bee660fcfdcc407bd3e29b01cc5e1a3.jpg" alt="">
 
         <div id="button"> <button onclick="roleta()"><img src="./img/ROLETA.png" alt=""></button> </div>
-
         <img src="https://nerdhits.com.br/wp-content/uploads/2022/02/ZENITSU-1-1200x900.jpg" alt="">
         <img src="https://criticalhits.com.br/wp-content/uploads/2021/11/Rengoku.jpg" alt="">
         <img src="https://staticc.sportskeeda.com/editor/2022/05/19b33-16535694324378.png" alt="" class="sanemi">
         <!-- <img src="https://nerdhits.com.br/wp-content/uploads/2022/08/Gyomei-Himejima.jpg" alt=""> -->
-        <img src="https://ovicio.com.br/wp-content/uploads/2021/08/20210820-ovicio-kimetsu-demonslayer-shinobu-555x555.jpg" alt="">
-        
+        <!-- <img src="https://ovicio.com.br/wp-content/uploads/2021/08/20210820-ovicio-kimetsu-demonslayer-shinobu-555x555.jpg" alt=""> -->
+
     </div>
     <div>
-    <div id="mostra">
-        Seu personagem no universo de Demon Slayer aparecerá aqui!
-    </div>
-    <div id="ver">
-        
-    </div>
-    <img src="" id="aleatorio" alt="" width="75vh">
+        <div id="mostra">
+            Seu personagem no universo de Demon Slayer aparecerá aqui!
+        </div>
+        <div id="ver">
+            <h2>A roleta irá girar um HASHIRA, LUA SUPERIOR ou algum dos PROTAGONISTAS</h2>
+        </div>
+        <div class="cor">aaaaaaaaa</div>
+        <div id="texto"></div>
+        <div class="roda">
+            <img src="" id="aleatorio" alt="" width="400vh">
+        </div>
+
 
 
 
 
 </body>
+
 </html>
 
 <script>
 
-    function roleta(){
-
-        var roleta = parseInt(1+Math.random() * 10) 
-
+    function roleta() {
+        var roleta = parseInt(1 + Math.random() * 10)
         console.log(roleta);
-    
-        if(roleta==8){
-            button.innerHTML=''
-            aleatorio.src='./img/Akaza_Full_Body_Design_29.jpg'
-        }else if(roleta==7){
-            button.innerHTML=''
-            aleatorio.src='./img/Obanai_anime_29.jpg'
+
+        if (roleta == 8) {
+            button.innerHTML = ''
+            // AKAZA
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria AKAZA'
+            aleatorio.src = './img/Akaza_Full_Body_Design_29.jpg'
+        } else if (roleta == 7) {
+            // OBANAI
+            button.innerHTML = ''
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria OBANAI'
+            aleatorio.src = './img/Obanai_anime_29.jpg'
+        } else if (roleta == 6) {
+            // TANJIRO
+            button.innerHTML = ''
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria TANJIRO'
+            aleatorio.src = 'https://static.wikia.nocookie.net/liberproeliis/images/e/e9/Kamado.Tanjirou.full.2852812.png/revision/latest?cb=20200417163440&path-prefix=pt-br'
+        } else if (roleta == 5) {
+            // ZENITSU
+            button.innerHTML = ''
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria ZENITSU'
+            aleatorio.src = 'https://i.pinimg.com/originals/83/95/c6/8395c6305b38e7526311fa9fb4ea1865.png'
+        } else if (roleta == 4) {
+            // inosuke
+            button.innerHTML = ''
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria INOSUKE'
+            aleatorio.src = 'https://static.wikia.nocookie.net/liberproeliis/images/9/94/Inosuke_anime_design.png/revision/latest?cb=20200417154720&path-prefix=pt-br'
+        } else if (roleta == 3) {
+            // rengoku
+            button.innerHTML = ''
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria RENGOKU'
+            aleatorio.src = 'https://static.wikia.nocookie.net/animeverso/images/5/52/Kyojuro_Rengoku.png/revision/latest?cb=20220813153324&path-prefix=pt-br'
+        } else if (roleta == 2) {
+            // tomioka
+            button.innerHTML = ''
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria TOMIOKA'
+            aleatorio.src = 'https://static.wikia.nocookie.net/liberproeliis/images/5/54/4592.png/revision/latest?cb=20200418165914&path-prefix=pt-br'
+        } else if (roleta == 1) {
+            // sanemi
+            button.innerHTML = ''
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria SANEMI'
+            aleatorio.src = 'https://cdn130.picsart.com/341353876024211.png'
+        } else if (roleta == 9) {
+            //  mitsuri
+            button.innerHTML = ''
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria MITSURI'
+            aleatorio.src = 'https://static.wikia.nocookie.net/liberproeliis/images/7/74/Mitsuri_anime.png/revision/latest?cb=20200419161718&path-prefix=pt-br'
+        } else if (roleta == 10) {
+            // uzui
+            button.innerHTML = ''
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria UZUI'
+            aleatorio.src = 'https://static.wikia.nocookie.net/animeverso/images/3/34/Tengen-Uzui-869x1024.png/revision/latest?cb=20220814205322&path-prefix=pt-br'
+        } else if (roleta == 11) {
+            // nezuko
+            button.innerHTML = ''
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria NEZUKO'
+            aleatorio.src = 'https://static.wikia.nocookie.net/liberproeliis/images/2/2f/Nezuko_anime_design.png/revision/latest?cb=20200416224847&path-prefix=pt-br'
+        } else if (roleta == 12) {
+            // gyomei
+            button.innerHTML = ''
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria GYOMEI'
+            aleatorio.src = 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ca3b8950-88c9-4e55-aa64-164a622371bc/df3mfzp-702a7119-5c54-40bc-9751-4152c7526e97.png/v1/fill/w_770,h_1038,strp/gyomei_himejima_png_by_dflp3_by_dflp3_df3mfzp-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTcyNiIsInBhdGgiOiJcL2ZcL2NhM2I4OTUwLTg4YzktNGU1NS1hYTY0LTE2NGE2MjIzNzFiY1wvZGYzbWZ6cC03MDJhNzExOS01YzU0LTQwYmMtOTc1MS00MTUyYzc1MjZlOTcucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.8GraF7jzd2FRH8qWI4OvSr5zLhHd9mAu4N6aeYczBoU'
+        } else if (roleta == 13) {
+            // muichiro
+            button.innerHTML = ''
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria MUICHIRO'
+            aleatorio.innerHTML = 'https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/e/ee/Muichiro_Tokito_%28anime%29.png/revision/latest?cb=20210430223538&path-prefix=pt-br'
+        } else if (roleta == 14) {
+            // kokushibo
+            button.innerHTML = ''
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria KOKUSHIBO'
+            aleatorio.innerHTML = 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/93f37be2-d346-40d1-ad11-3be570416e52/dewpspa-685640cc-b88f-45cf-b2f7-93a13d523abb.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzkzZjM3YmUyLWQzNDYtNDBkMS1hZDExLTNiZTU3MDQxNmU1MlwvZGV3cHNwYS02ODU2NDBjYy1iODhmLTQ1Y2YtYjJmNy05M2ExM2Q1MjNhYmIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ksGkcDpEZW_PI6IdC4TMiUmtDYwm13ZxqmbqXvKODVY'
+        } else if (roleta == 15) {
+            // douma
+            button.innerHTML = ''
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria DOUMA'
+            aleatorio.innerHTML = 'https://i.pinimg.com/originals/a8/1e/66/a81e664a1c96ba06a56c4802c439f89a.png'
+        } else if (roleta == 16) {
+            // Hantegu 
+            button.innerHTML = ''
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria HANTEGU'
+            aleatorio.innerHTML = 'https://uploads-ssl.webflow.com/6215709a2879ceb5988bb02e/621eca4555e2c416ea1578db_Hantengu.png'
+
+        } else if (roleta == 17) {
+            // Nakime
+            button.innerHTML = ''
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria NAKIME'
+            aleatorio.src = 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/50dad8da-ce58-4540-a042-1313d34b7e56/de33e8l-276d5882-b2ed-4587-bc72-888501ff29b5.png/v1/fit/w_414,h_278,strp/kimetsunoyaiba_by_dt501061_de33e8l-414w.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTYyMyIsInBhdGgiOiJcL2ZcLzUwZGFkOGRhLWNlNTgtNDU0MC1hMDQyLTEzMTNkMzRiN2U1NlwvZGUzM2U4bC0yNzZkNTg4Mi1iMmVkLTQ1ODctYmM3Mi04ODg1MDFmZjI5YjUucG5nIiwid2lkdGgiOiI8PTE0MzE3In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.l1cJxZ22T31mI9Zy1t_Qwq--buqxirg5QSVw8-lUlK4'
+        } else if (roleta == 18) {
+            // gyokko
+            button.innerHTML = ''
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria GYOKKO'
+            aleatorio.src = 'https://static.wikia.nocookie.net/liberproeliis/images/d/d3/1593973330888.png/revision/latest?cb=20200705205035&path-prefix=pt-br'
+        } else if (roleta == 19) {
+            // gyutaro e daki
+            button.innerHTML = ''
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria GYUTARO OU DAKI eles são uma só lua superior'
+            aleatorio.src = 'https://static.wikia.nocookie.net/monster-strike-enjp/images/6/6b/6161.png/revision/latest?cb=20220413001341'
+        } else if (roleta == 20) {
+            // kaigaku
+            button.innerHTML = ''
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria Kaigaku'
+            aleatorio.src = 'https://static.wikia.nocookie.net/liberproeliis/images/2/24/1593982011962.png/revision/latest?cb=20200705214841&path-prefix=pt-br'
+        } else if (roleta == 21) {
+            // MUZAN
+            button.innerHTML = ''
+            texto.innerHTML='Você no universo de Kimetsu no Yaiba seria o rei demonio MUZAN'
+            aleatorio.src = 'https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/0/0e/Muzan_Kibutsuji_Full_Body_%28Anime%29.png/revision/latest?cb=20210731042132'
         }
     }
 

@@ -11,60 +11,66 @@
 </head>
 
 <body>
-    <a href="index.html">
+    <div class="migrar">
+        <a href="index.html">
 
-        <img src=".//img/logokimetsu.png" alt="">
-        
-   </a>
+            <img src=".//img/logokimetsu.png" alt="">
 
-        <div id="fora">
+        </a>
+        <!-- <button style="background:transparent; border: none;" onclick="sorteio()" width="250px">
+            <img src="./img/pagsorteio.png" alt="">
+        </button> -->
+    </div>
 
-            <form action="">
-                <img src="./img/login.png">
+    <div id="fora">
+
+        <div class="form">
+            <img src="./img/login.png">
 
 
-                <div class="input">
-                    <input type="text" name="" id="email_input" placeholder="email">
-                </div>
-
-                <div class="input">
-                    <input id="senha_input" type="password" placeholder="senha">
-                </div>
-
-                <div id="btn">
-                    <button id='btn2' onclick="entrar()" type="submit">
-                        <img src="./img/logar.png" alt="">
-                    </button>
-                </div>
-            </form>
-
-            <div class="elementos">
-                <!-- <div class="lua"> <img src="./img/lua.png"> </div> -->
-                <!-- <div class="sol"> <img src=".//img/sol.png"> </div> -->
+            <div class="input">
+                <input type="text" name="" id="email_input" placeholder="email">
             </div>
 
-
-
-
-            <div class="banner">
-                <div class="img1"> <img src="./img/login kokushesquerdai.png">
-                    <div class="lua"> <img src="./img/lua.png"> </div>
-                </div>
-                <div class="img2"> <img src="./img/espada.png">
-                    <div class="sol"> <img src=".//img/sol.png"> </div>
-                </div>
+            <div class="input">
+                <input id="senha_input" type="password" placeholder="senha">
             </div>
 
+            <div id="btn">
+                <button id='btn2' onclick="entrar()">
+                    <img src="./img/logar.png" alt="">
+                </button>
+            </div>
+        </div>
+        <!-- </form> -->
 
-
-
-
-
+        <div class="elementos">
+            <!-- <div class="lua"> <img src="./img/lua.png"> </div> -->
+            <!-- <div class="sol"> <img src=".//img/sol.png"> </div> -->
         </div>
 
 
 
-   
+
+        <div class="banner">
+            <div class="img1"> <img src="./img/login kokushesquerdai.png">
+                <div class="lua"> <img src="./img/lua.png"> </div>
+            </div>
+            <div class="img2"> <img src="./img/espada.png">
+                <div class="sol"> <img src=".//img/sol.png"> </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
 
 </body>
 
@@ -73,7 +79,7 @@
 <script>
 
 
-    function entrar(){
+    function entrar() {
 
         // aguardar();
 
@@ -85,18 +91,16 @@
             finalizarAguardar();
             return false;
         }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
+
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
-     
-    
-        fetch("./usuarios/autenticar",{
+
+
+
+        fetch('usuarios/autenticar', {
             method: "POST",
-            headers:{
-                
+            headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
@@ -105,11 +109,13 @@
             })
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
+            console.log("FEEEEEEEEEETCH");
 
             if (resposta.ok) {
                 console.log(resposta);
 
                 resposta.json().then(json => {
+
                     console.log(json);
                     console.log(JSON.stringify(json));
 
@@ -142,6 +148,9 @@
 
     function sumirMensagem() {
         cardErro.style.display = "none"
+    }
+    function sorteio() {
+        window.location = "sorteio.html"
     }
 
 </script>
