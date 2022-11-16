@@ -16,6 +16,10 @@
 .migrar{
     display: flex;
     justify-content: space-between;
+    /* background-color: aqua; */
+    width: 100%;
+    
+   
 }
 .tamanho{
     width: 50vh;
@@ -25,6 +29,7 @@
 }
 .migrar img{
     width: 25%;
+    /* background-color: aqua; */
 }
 .input{
     padding-top: 15px;
