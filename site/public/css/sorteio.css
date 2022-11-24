@@ -14,6 +14,20 @@ body{
     width: 98%;
     justify-content: space-around;
 }
+#personagem{
+    display: flex;
+    width: 85%;
+}
+#personagem img{ 
+    display: flex;
+    margin-left: 10%;
+    /* justify-content: center; */
+    /* width: 45%; */
+    
+}
+canvas{
+    border: solid white;
+}
 h4{
     gap: 2%;
 }
@@ -55,6 +69,7 @@ input{
     display: flex;
     background: linear-gradient(black,darkred);
     justify-content: space-between;
+    
 }
 .geral img{
     display: flex;

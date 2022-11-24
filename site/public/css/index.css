@@ -10,10 +10,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 1rem;
-    width: 100%;
+    width: 97.9%;
     /* border: solid white; */
     /* position: fixed; */
-
 }
 
 .logo{
@@ -39,7 +38,11 @@
     width:65%;
 }
 .preto{
-    width: 50vh;
+    width: 30vh;
+}
+.texto2 li{
+padding: 5px;
+
 }
 .dados button{
     border: none;
@@ -90,13 +93,18 @@ li{
     border-radius: 5vh;
 }
 .texto2 li{
+    padding-top: 5px;
     color:rgb(197, 186, 186);
 }
 .texto2 ul{
     color: white;
 }
 .texto li{
+    /* font-size: 20px; */
+    /* padding-bottom: 10px; */
+    /* margin-left: 10px; */
     color: rgb(197, 186, 186);
+    /* text-align: center; */
 }
 .texto h2{
     color: rgb(197, 186, 186);
@@ -205,6 +213,11 @@ li{
     display: flex;
     background-color:rgb(100, 1, 1);
     border: solid black;
+    font-size: 20px;
+    
+}
+.super span{
+    padding: 15px;
 }
 .super img{
     display: flex;
@@ -223,10 +236,14 @@ span{
     color: rgb(255, 255, 255);
 }
 .espada{
+    margin-top: 15px;
     display: flex;
     justify-content: space-between;
     
+    
 }
+
+
 .espada img{
     width: 30%;
     border-radius: 5vh;
@@ -245,6 +262,7 @@ span{
     padding: 25px;
     background: linear-gradient(to top,rgb(60,1,60),darkred);
     color: rgb(197, 186, 186);
+    /* text-align: center; */
     
 
 }
@@ -252,16 +270,28 @@ span{
 .spoiler{
     background-color:black;
     color: white;
+    /* backdrop-filter:blur (250px); */
 }
 .yorichi img{
-    width: 100% ;
+    width: 100%;
     
 }
 .yorichi{
     text-align: center;
     background-color: black;
     color: white;
+    /* backdrop-filter: blur(10px); */
 
+}
+.pilar{
+    padding: 25px;
+}
+.final{
+    padding-top: 25px;
+    color: white;
+    background-color: darkred;
+    text-align: center;
+    font-size: 25px;
 }
 
 

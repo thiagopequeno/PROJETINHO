@@ -1,71 +1,96 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
-body{
+
+body {
     background-color: rgb(0, 0, 0);
     /* background-color: white; */
 }
-.img{
+#button button{
+    background-color: black;
+}
+.img {
     display: flex;
     justify-content: center;
 }
-.img img{
+
+.img img {
     width: 45%;
 }
-.texto{
+
+.texto {
     text-align: center;
     color: rgb(255, 255, 255);
     background-color: black;
 }
-.roleta{
+
+.roleta {
     display: flex;
     justify-content: center;
     border: solid rgb(255, 255, 255);
     background-color: rgb(0, 0, 0);
+    height: 50vh;
+    width: 99.5%;
+    /* transition: ease-in-out 2.5s; */
+
     /* width: 75%; */
 
-  
+
 }
-.roleta img{
-    width: 192px;
+
+
+
+.roleta img {
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center; 
+   height: 100%;
+   width: 34%;
+   transition: ease-in-out 2.5s;
 }
-.roleta button{
-    background-color: black;
-    border: 0; outline: 0;
+
+.roleta button {
+    background-color: rgb(255, 255, 255);
+    border: 0;
+    outline: 0;
 }
-#mostra{
+
+#mostra {
     text-align: center;
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
 }
-#ver{
+
+#ver {
     background-color: white;
- text-align: center;
- color: darkred;
+    text-align: center;
+    color: darkred;
 }
-.cor{
-    background: linear-gradient(to left,darkred,black);
+
+.cor {
+    background: linear-gradient(to left, darkred, black);
 }
-.roda{
+
+.roda {
     display: flex;
     /* background: linear-gradient(to left,darkred,black); */
     /* border: solid white; */
     justify-content: center;
-    background: linear-gradient(to bottom,darkred,black);
+    background: linear-gradient(to bottom, darkred, black);
 }
-.roda img{
+
+.roda img {
     border: solid rgb(255, 255, 255);
 }
 
-#texto{
+#texto {
     background-color: black;
     font-size: large;
     color: white;
     text-align: center;
 }
-.voltar button{
+
+.voltar button {
     background-color: red;
 }
-
-

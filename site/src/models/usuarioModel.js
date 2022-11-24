@@ -31,6 +31,7 @@ function cadastrar(nome, email, senha,personagem) {
     return database.executar(instrucao);
 }
 
+
 module.exports = {
     entrar,
     cadastrar,

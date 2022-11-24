@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/sorteio.css">
     <link rel="stylesheet" href="cadastro.html ">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <title>Cadastro/sorteio</title>
 </head>
 
@@ -29,19 +31,24 @@
             <button onclick="ver()">Ver Personagem cadastrado</button>
         </div>
 
-        <img src="./img/demo.jpg" alt="">
+        <div id="personagem"> <img src="./img/demo.jpg" alt=""></div>
         <h4 style="color: white;">Vote no seu personagem favorito, entre os 3 mais cadastrados!<br><br>
             1 - <button onclick="fon()">
                 <div id="mostra1"></div>
-            </button> Quantidade de votos<div id="cont">0</div> <br>
+            </button> <br> Quantidade de votos<div id="cont">0</div> <br>
             2 - <button onclick="fon2()">
                 <div id="mostra2"></div>
-            </button> Quantidade de votos<div id="cont2">0</div><br>
+            </button><br> Quantidade de votos<div id="cont2">0</div><br>
             3 - <button onclick="fon3()">
                 <div id="mostra3"></div>
-            </button>  Quantidade de votos<div id="cont3">0</div><br>
+            </button> <br>Quantidade de votos<div id="cont3">0</div><br>
         </h4>
+        <div id="api" style="background-color: white;"></div>
 
+        <div class="chart-container" >
+            <canvas id="chart"></canvas>
+            <!-- <canvas id="myChart2"></canvas> -->
+        </div>
 
 
     </div>
@@ -77,6 +84,7 @@
         <img src="" id="daki">
         <img src="" id="kaigaku">
         <img src="" id="muzan">
+        <img src="" id="yorichi">
 
     </div>
 
@@ -85,10 +93,12 @@
 
 </html>
 <script>
+
+    var contador1 = 0
     function fon() {
-        var contador = 0
-        contador++
-        cont.innerHTML = contador
+        contador1 = 0
+        contador1++
+        cont.innerHTML = contador1
     }
     function fon2() {
         var contador = 0
@@ -100,19 +110,26 @@
         contador++
         cont3.innerHTML = contador
     }
-    
+
     //  console.log(localStorage.getItem(1)); 
+    // if(localStorage.getItem(1)==localStorage.getItem(1)){
+    //     contador1++
+    // }
+    
+     mostra1.innerHTML =sessionStorage.getItem('PERSONAGEM_USUARIO');
+     mostra2.innerHTML = localStorage.getItem(1,);
+     mostra3.innerHTML = localStorage.getItem(2);
 
-    mostra1.innerHTML = localStorage.getItem(1);
-    mostra2.innerHTML = localStorage.getItem(2);
-    mostra3.innerHTML = localStorage.getItem(3);
-
+    // if(localStorage.getItem(1)==localStorage.getItem(2)){
+    //    mostra1.innerHTML=localStorage.getItem(1);
+    //    contador1++
+    // }
 
     var personages = []
 
     function cadastrar() {
-        p = id_perso.value
-        if (p == 'inosuke' || p == 'tanjiro' || p == 'zenitsu' || p == 'rengoku' || p == 'shinobu' || p == 'tomioka' || p == 'sanemi' || p == 'mitsuri' || p == 'uzui' || p == 'nezuko' || p == 'obanai' || p == 'gyomei' || p == 'muichiro' || p == 'kokushibo' || p == 'douma' || p == 'akaza' || p == 'hantegu' || p == 'nakime' || p == 'gyokko' || p == 'gyutaro' || p == 'daki' || p == 'kaigaku' || p == 'muzan') {
+        var p = (id_perso.value).toLowerCase()
+        if (p == 'inosuke' || p == 'tanjiro' || p == 'zenitsu' || p == 'rengoku' || p == 'shinobu' || p == 'tomioka' || p == 'sanemi' || p == 'mitsuri' || p == 'uzui' || p == 'nezuko' || p == 'obanai' || p == 'gyomei' || p == 'muichiro' || p == 'kokushibo' || p == 'douma' || p == 'akaza' || p == 'hantegu' || p == 'nakime' || p == 'gyokko' || p == 'gyutaro' || p == 'daki' || p == 'kaigaku' || p == 'muzan' || p == 'yorichi') {
             personages.push(id_perso.value)
             id_perso.value = ''
             alert('Personagem cadastrado')
@@ -121,7 +138,8 @@
         }
     }
     function ver() {
-        var pessoa = id_perso.value.toLowerCase()
+        var pessoa = (id_perso.value).toLowerCase()
+        console.log(pessoa)
 
         if (personages.length > -1) {
             console.log('entrou');
@@ -130,65 +148,99 @@
                 console.log('entrou no for');
                 if (personages[contador] == 'tanjiro') {
                     tanjiro.src = "./img/tanjirosorteio.jpg"
+                    personagem.innerHTML = '<img src="./img/tanjirosorteio.jpg" alt="">'
 
                 } else if (personages[contador] == 'zenitsu') {
                     zenitsu.src = "https://i.pinimg.com/originals/83/95/c6/8395c6305b38e7526311fa9fb4ea1865.png"
+                    personagem.innerHTML = '<img src="https://i.pinimg.com/originals/83/95/c6/8395c6305b38e7526311fa9fb4ea1865.png" alt="">'
 
                 } else if (personages[contador] == 'inosuke') {
                     inosuke.src = "./img/inosukesorteio.jpg"
+                    personagem.innerHTML = '<img src="./img/inosukesorteio.jpg" alt="">'
 
                 } else if (personages[contador] == 'rengoku') {
                     rengoku.src = "./img/rengokusorteio.jpg"
+                    personagem.innerHTML = '<img src="./img/rengokusorteio.jpg"  alt="">'
 
                 } else if (personages[contador] == 'shinobu') {
                     shinobu.src = "./img/shinobusorteio.jpg"
+                    personagem.innerHTML = '<img src="./img/shinobusorteio.jpg"  alt="">'
 
                 } else if (personages[contador] == 'tomioka') {
-                    tomioka.src = ".//img/5ede4a20b760540004f2c5e8 (1).png"
+                    tomioka.src = "./img/hashiraagua.png"
+                    personagem.innerHTML = '<img src="./img/hashiraagua.png"  alt="">'
+
                 }
                 else if (personages[contador] == 'sanemi') {
-                    sanemi.src = "https://cdn130.picsart.com/341353876024211.png"
+                    sanemi.src = "https://static.wikia.nocookie.net/liberproeliis/images/c/cc/Sanemi_anime.png/revision/latest?cb=20200419210420&path-prefix=pt-br"
+                    personagem.innerHTML = '<img src="https://static.wikia.nocookie.net/liberproeliis/images/c/cc/Sanemi_anime.png/revision/latest?cb=20200419210420&path-prefix=pt-br"  alt="">'
+
                 }
                 else if (personages[contador] == 'mitsuri') {
                     mitsuri.src = './img/mitsurisorteio.jpg'
+                    personagem.innerHTML = '<img src="./img/mitsurisorteio.jpg"  alt="">'
                 }
                 else if (personages[contador] == 'uzui') {
                     uzui.src = "./img/uzuisorteio.jpg"
+                    personagem.innerHTML = '<img src="./img/uzuisorteio.jpg"  alt="">'
 
                 } else if (personages[contador] == 'nezuko') {
                     nezuko.src = "./img/nezukosorteio.jpg"
+                    personagem.innerHTML = '<img src="./img/nezukosorteio.jpg"  alt="">'
                 }
                 else if (personages[contador] == 'obanai') {
                     obanai.src = "./img/obanaisorteio.jpg"
+                    personagem.innerHTML = '<img src="./img/obanaisorteio.jpg"  alt="">'
+
                 } else if (personages[contador] == 'gyomei') {
-                    gyomei.src = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ca3b8950-88c9-4e55-aa64-164a622371bc/df3mfzp-702a7119-5c54-40bc-9751-4152c7526e97.png/v1/fill/w_770,h_1038,strp/gyomei_himejima_png_by_dflp3_by_dflp3_df3mfzp-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTcyNiIsInBhdGgiOiJcL2ZcL2NhM2I4OTUwLTg4YzktNGU1NS1hYTY0LTE2NGE2MjIzNzFiY1wvZGYzbWZ6cC03MDJhNzExOS01YzU0LTQwYmMtOTc1MS00MTUyYzc1MjZlOTcucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.8GraF7jzd2FRH8qWI4OvSr5zLhHd9mAu4N6aeYczBoU"
+                    gyomei.src = "./img/Gyomei_anime.jpg"
+                    personagem.innerHTML = '<img src="./img/Gyomei_anime.jpg">'
+
 
                 } else if (personages[contador] == 'muichiro') {
                     muichiro.src = "./img/muichirosorteio.png"
+                    personagem.innerHTML = '<img src="./img/muichirosorteio.png"  alt="">'
                 }
                 else if (personages[contador] == 'kokushibo') {
                     kokushibo.src = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/93f37be2-d346-40d1-ad11-3be570416e52/dewpspa-685640cc-b88f-45cf-b2f7-93a13d523abb.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzkzZjM3YmUyLWQzNDYtNDBkMS1hZDExLTNiZTU3MDQxNmU1MlwvZGV3cHNwYS02ODU2NDBjYy1iODhmLTQ1Y2YtYjJmNy05M2ExM2Q1MjNhYmIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ksGkcDpEZW_PI6IdC4TMiUmtDYwm13ZxqmbqXvKODVY"
+                    personagem.innerHTML = '<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/93f37be2-d346-40d1-ad11-3be570416e52/dewpspa-685640cc-b88f-45cf-b2f7-93a13d523abb.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzkzZjM3YmUyLWQzNDYtNDBkMS1hZDExLTNiZTU3MDQxNmU1MlwvZGV3cHNwYS02ODU2NDBjYy1iODhmLTQ1Y2YtYjJmNy05M2ExM2Q1MjNhYmIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ksGkcDpEZW_PI6IdC4TMiUmtDYwm13ZxqmbqXvKODVY"  alt="">'
                 } else if (personages[contador] == 'douma') {
                     douma.src = "https://i.pinimg.com/originals/a8/1e/66/a81e664a1c96ba06a56c4802c439f89a.png"
+                    personagem.innerHTML = '<img src="https://i.pinimg.com/originals/a8/1e/66/a81e664a1c96ba06a56c4802c439f89a.png"  alt="">'
 
                 } else if (personages[contador] == 'akaza') {
                     akaza.src = "./img/Akaza_Full_Body_Design_29.jpg"
+                    personagem.innerHTML = '<img src="./img/Akaza_Full_Body_Design_29.jpg"  alt="">'
                 } else if (personages[contador] == 'hantegu') {
                     hantegu.src = "https://uploads-ssl.webflow.com/6215709a2879ceb5988bb02e/621eca4555e2c416ea1578db_Hantengu.png"
+                    personagem.innerHTML = '<img src="https://uploads-ssl.webflow.com/6215709a2879ceb5988bb02e/621eca4555e2c416ea1578db_Hantengu.png"  alt="">'
+
                 } else if (personages[contador] == 'nakime') {
                     nakime.src = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/50dad8da-ce58-4540-a042-1313d34b7e56/de33e8l-276d5882-b2ed-4587-bc72-888501ff29b5.png/v1/fit/w_414,h_278,strp/kimetsunoyaiba_by_dt501061_de33e8l-414w.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTYyMyIsInBhdGgiOiJcL2ZcLzUwZGFkOGRhLWNlNTgtNDU0MC1hMDQyLTEzMTNkMzRiN2U1NlwvZGUzM2U4bC0yNzZkNTg4Mi1iMmVkLTQ1ODctYmM3Mi04ODg1MDFmZjI5YjUucG5nIiwid2lkdGgiOiI8PTE0MzE3In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.l1cJxZ22T31mI9Zy1t_Qwq--buqxirg5QSVw8-lUlK4"
+                    personagem.innerHTML = '<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/50dad8da-ce58-4540-a042-1313d34b7e56/de33e8l-276d5882-b2ed-4587-bc72-888501ff29b5.png/v1/fit/w_414,h_278,strp/kimetsunoyaiba_by_dt501061_de33e8l-414w.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTYyMyIsInBhdGgiOiJcL2ZcLzUwZGFkOGRhLWNlNTgtNDU0MC1hMDQyLTEzMTNkMzRiN2U1NlwvZGUzM2U4bC0yNzZkNTg4Mi1iMmVkLTQ1ODctYmM3Mi04ODg1MDFmZjI5YjUucG5nIiwid2lkdGgiOiI8PTE0MzE3In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.l1cJxZ22T31mI9Zy1t_Qwq--buqxirg5QSVw8-lUlK4"  alt="">'
                 }
-                else if (personages[contador] == 'gyokko')
+                else if (personages[contador] == 'gyokko') {
                     gyokko.src = "https://cdn140.picsart.com/00d1e618-a2f5-4c89-9e3d-5cdcc20f8eb0/383422061034211.png"
-                else if (personages[contador] == "gyutaro") {
+                    personagem.innerHTML = '<img src="https://cdn140.picsart.com/00d1e618-a2f5-4c89-9e3d-5cdcc20f8eb0/383422061034211.png"  alt="">'
+
+                } else if (personages[contador] == "gyutaro") {
                     gyutaro.src = "./img/gyutarosorteio.jpg"
+                    personagem.innerHTML = '<img src="./img/gyutarosorteio.jpg"  alt="">'
                 } else if (personages[contador] == 'daki') {
                     daki.src = "https://i.pinimg.com/originals/e3/95/a0/e395a00db9bc33e95d12b094ce9142de.png"
+                    personagem.innerHTML = '<img src="https://i.pinimg.com/originals/e3/95/a0/e395a00db9bc33e95d12b094ce9142de.png"  alt="">'
                 }
                 else if (personages[contador] == 'kaigaku') {
                     kaigaku.src = "https://static.wikia.nocookie.net/liberproeliis/images/2/24/1593982011962.png/revision/latest?cb=20200705214841&path-prefix=pt-br"
+                    personagem.innerHTML = '<img src="https://static.wikia.nocookie.net/liberproeliis/images/2/24/1593982011962.png/revision/latest?cb=20200705214841&path-prefix=pt-br"  alt="">'
+
                 } else if (personages[contador] == 'muzan') {
-                    muzan.src = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7ed9f74e-cf1e-4746-98fc-7d52371449b3/depuzqe-b797fcc5-2757-4e36-9d19-82ef07cca591.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzdlZDlmNzRlLWNmMWUtNDc0Ni05OGZjLTdkNTIzNzE0NDliM1wvZGVwdXpxZS1iNzk3ZmNjNS0yNzU3LTRlMzYtOWQxOS04MmVmMDdjY2E1OTEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.m5QAuULPFJoGycAZvGeSMcFamVwqXJ2hWbtnmmTp64Q"
+                    muzan.src = "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/2/23/Muzan_Manga.png/revision/latest?cb=20210514013953&path-prefix=pt-br"
+                    personagem.innerHTML = '<img src="https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/2/23/Muzan_Manga.png/revision/latest?cb=20210514013953&path-prefix=pt-br"  alt="">'
+                }
+                else if (personages[contador] == 'yorichi') {
+                    yorichi.src = "https://static.wikia.nocookie.net/fiction-battlefield/images/2/28/Yoriichi_render.webp/revision/latest?cb=20210520155952&path-prefix=pt-br"
+                    personagem.innerHTML = '<img src="https://static.wikia.nocookie.net/fiction-battlefield/images/2/28/Yoriichi_render.webp/revision/latest?cb=20210520155952&path-prefix=pt-br"  alt="">'
                 }
 
             }
@@ -204,4 +256,106 @@
 
     }
 
+</script>
+<script>
+    const labels = [
+        'yorichi',
+        'Muzan',
+        'kokushibo',
+        'gyomei',
+        'sanemi',
+        'tomioka',
+        'tanjiro',
+        'akaza',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Personagem mais forte',
+            backgroundColor: 'red',
+            borderColor: 'blue',
+            data: [250, 180,100,95,90,75,40,75],
+        },
+            //   {
+            //     label: 'Umidade',
+            //     backgroundColor: 'rgb(455, 0, 0)',
+            //     borderColor: 'rgb(455, 0, 0)',
+            //     data: [10,20,30,40,50,60,70,80],
+            //   }
+        ]
+    };
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {
+            scales:{
+                    x:{
+                        ticks:{
+                            color:"#fff"
+                        }
+                    },
+                    y:{
+                        ticks:{
+                            color:"#fff"
+                        }
+                    }
+                },
+            
+            plugins:{ 
+                legend:{ 
+                    labels:{
+                        color: '#fff'
+                    } 
+                },
+                
+            }
+        }
+    };
+
+
+    const labels2 = [
+        'janeiro',
+        'fevereiro',
+        'maio',
+        'abril',
+        'março',
+        'junho',
+    ];
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Temperatura media',
+            backgroundColor: 'rgb(400, 100, 0)',
+            borderColor: 'rgb(0,400,0)',
+            data: [24, 26, 28, 30, 24, 23, 80, 90],
+        },
+        {
+            label: 'Umidade media',
+            backgroundColor: 'rgb(455, 0, 0)',
+            borderColor: 'rgb(455, 0, 0)',
+            data: [80, 86, 83, 87, 79, 88, 89, 90, 100],
+        }
+        ]
+    };
+
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {}
+    };
+
+</script>
+<script>
+
+    const chart = new Chart(
+        document.getElementById('chart'),
+        config
+    );
+  //   const myChart2 = new Chart(
+  //   document.getElementById('myChart2'),
+  //   config2
+  // );
 </script>

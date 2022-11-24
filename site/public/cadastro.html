@@ -17,7 +17,6 @@
         <a href="index.html"> <img src="img/logokimetsu.png" alt="" width="150px"></a><br>
         <!-- <b class="logoTitle" style="color: RED;">DemonSlayer</b> -->
         <a href="./login.html"> <img src="./img/iralogin.png" alt="" width="150vh"></a>
-
     </div>
 
 
@@ -94,9 +93,16 @@
     var contador=0
 
     function cadastrar(){
+
+        // if(contador==3){
+        //     contador= 0
+        // }
         favorito.push(personagem_input.value)
         contador++
         localStorage.setItem(contador,personagem_input.value); 
+        if(contador==2){
+            contador=0
+        }
 
         // IF contador IGUAL A  0   
 
@@ -153,7 +159,7 @@
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
+            // finalizarAguardar();
         });
 
         return false;
