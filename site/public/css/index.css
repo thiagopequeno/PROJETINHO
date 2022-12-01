@@ -100,7 +100,7 @@ li{
     color: white;
 }
 .texto li{
-    /* font-size: 20px; */
+    /* font-size: 30px; */
     /* padding-bottom: 10px; */
     /* margin-left: 10px; */
     color: rgb(197, 186, 186);
@@ -251,6 +251,7 @@ span{
 .armas{
     display: flex;
     justify-content: space-between;
+    font-size: 20px;
 }
 .armas .marca{
     padding: 25px;

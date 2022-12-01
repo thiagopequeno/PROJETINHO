@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/sorteio.css">
     <link rel="stylesheet" href="cadastro.html ">
+    <link rel="shortcut icon" href="./img/Akaza_Full_Body_Design_29.jpg" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <title>Cadastro/sorteio</title>
@@ -32,22 +33,14 @@
         </div>
 
         <div id="personagem"> <img src="./img/demo.jpg" alt=""></div>
-        <h4 style="color: white;">Vote no seu personagem favorito, entre os 3 mais cadastrados!<br><br>
-            1 - <button onclick="fon()">
-                <div id="mostra1"></div>
-            </button> <br> Quantidade de votos<div id="cont">0</div> <br>
-            2 - <button onclick="fon2()">
-                <div id="mostra2"></div>
-            </button><br> Quantidade de votos<div id="cont2">0</div><br>
-            3 - <button onclick="fon3()">
-                <div id="mostra3"></div>
-            </button> <br>Quantidade de votos<div id="cont3">0</div><br>
-        </h4>
+
+
+       
         <div id="api" style="background-color: white;"></div>
 
-        <div class="chart-container" >
+        <div class="chart-container">
             <canvas id="chart"></canvas>
-            <!-- <canvas id="myChart2"></canvas> -->
+            <canvas id="myChart"></canvas>
         </div>
 
 
@@ -94,36 +87,6 @@
 </html>
 <script>
 
-    var contador1 = 0
-    function fon() {
-        contador1 = 0
-        contador1++
-        cont.innerHTML = contador1
-    }
-    function fon2() {
-        var contador = 0
-        contador++
-        cont2.innerHTML = contador
-    }
-    function fon3() {
-        var contador = 0
-        contador++
-        cont3.innerHTML = contador
-    }
-
-    //  console.log(localStorage.getItem(1)); 
-    // if(localStorage.getItem(1)==localStorage.getItem(1)){
-    //     contador1++
-    // }
-    
-     mostra1.innerHTML =sessionStorage.getItem('PERSONAGEM_USUARIO');
-     mostra2.innerHTML = localStorage.getItem(1,);
-     mostra3.innerHTML = localStorage.getItem(2);
-
-    // if(localStorage.getItem(1)==localStorage.getItem(2)){
-    //    mostra1.innerHTML=localStorage.getItem(1);
-    //    contador1++
-    // }
 
     var personages = []
 
@@ -239,8 +202,8 @@
                     personagem.innerHTML = '<img src="https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/2/23/Muzan_Manga.png/revision/latest?cb=20210514013953&path-prefix=pt-br"  alt="">'
                 }
                 else if (personages[contador] == 'yorichi') {
-                    yorichi.src = "https://static.wikia.nocookie.net/fiction-battlefield/images/2/28/Yoriichi_render.webp/revision/latest?cb=20210520155952&path-prefix=pt-br"
-                    personagem.innerHTML = '<img src="https://static.wikia.nocookie.net/fiction-battlefield/images/2/28/Yoriichi_render.webp/revision/latest?cb=20210520155952&path-prefix=pt-br"  alt="">'
+                    yorichi.src = "./img/yorishilogin.png"
+                    personagem.innerHTML = '<img src="./img/yorishilogin.png"  alt="">'
                 }
 
             }
@@ -257,6 +220,8 @@
     }
 
 </script>
+
+
 <script>
     const labels = [
         'yorichi',
@@ -275,53 +240,56 @@
             label: 'Personagem mais forte',
             backgroundColor: 'red',
             borderColor: 'blue',
-            data: [250, 180,100,95,90,75,40,75],
-        },
+            data: [250, 180, 100, 95, 90, 75, 40, 75],
+
             //   {
             //     label: 'Umidade',
             //     backgroundColor: 'rgb(455, 0, 0)',
             //     borderColor: 'rgb(455, 0, 0)',
             //     data: [10,20,30,40,50,60,70,80],
             //   }
-        ]
+        }]
     };
 
     const config = {
         type: 'bar',
         data: data,
         options: {
-            scales:{
-                    x:{
-                        ticks:{
-                            color:"#fff"
-                        }
-                    },
-                    y:{
-                        ticks:{
-                            color:"#fff"
-                        }
+            scales: {
+                x: {
+                    ticks: {
+                        color: "#fff"
                     }
                 },
-            
-            plugins:{ 
-                legend:{ 
-                    labels:{
+                y: {
+                    ticks: {
+                        color: "#fff"
+                    }
+                }
+            },
+
+            plugins: {
+                legend: {
+                    labels: {
                         color: '#fff'
-                    } 
+                    }
                 },
-                
+
             }
         }
     };
 
 
     const labels2 = [
-        'janeiro',
-        'fevereiro',
-        'maio',
-        'abril',
-        'março',
-        'junho',
+        'tanjiro',
+        'inosuke',
+        'nezuko',
+        'zenitsu',
+        'rengoku',
+        'tomioka',
+        'uzui',
+        'akaza',
+        'kokushibo',
     ];
 
     const data2 = {
@@ -350,12 +318,158 @@
 </script>
 <script>
 
-    const chart = new Chart(
-        document.getElementById('chart'),
-        config
-    );
-  //   const myChart2 = new Chart(
-  //   document.getElementById('myChart2'),
-  //   config2
-  // );
+const chart = new Chart(
+          document.getElementById('chart'),
+          config
+     );
+//       const myChart2 = new Chart(
+//       document.getElementById('myChart2'),
+//       config2
+//    ); 
+</script> 
+
+<!-- MEUUUUUUUUUUUUUUUUUUUUUUU -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- PROFESSORA -->
+<script>
+
+    let proximaAtualizacao;
+
+    window.onload = obterDadosGrafico();
+
+
+    // verificar_autenticacao();
+
+    function alterarTitulo(fkpersonagem) {
+        var fkpersonagem= document.getElementById(`tituloAquario`)
+    }
+    // O gráfico é construído com três funções:
+    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
+    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
+    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
+
+    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
+    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
+    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+    function obterDadosGrafico(fkpersonagem) {
+
+        alterarTitulo(fkpersonagem)
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch(`/medidas/ultimas/${fkpersonagem}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    var nome = [];
+                    var dados = [];
+                    for(var i =0; i<resposta.length;i++){
+                        nome.push(resposta[i].nomepersonagem);
+                        dados.push(resposta[i].dados);
+                    }
+
+                    plotarGrafico(nome,dados)
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(nome,dado) {
+        console.log('ENTROU NO PLOTAR GRAFICO');
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+
+        // Criando estrutura para plotar gráfico - dados
+        const dados = {
+            labels: nome,
+            datasets: [{
+                label:'Personagens favoritos',
+                data: dado,
+                fill: false,
+                borderColor: ['rgb(255,0,0)'],
+                tension: 0.1,
+                backgroundColor:['rgb(255,0,0)']
+            },
+            // {
+                // label: 'Temperatura',
+                // data: [],
+                // fill: false,
+                // borderColor: 'rgb(199, 52, 52)',
+                // tension: 0.1
+            // }
+        ]
+        };
+
+
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+
+
+       
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data:dados,
+            options:{
+                scales: {
+                x: {
+                    ticks: {
+                        color: "#fff"
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: "#fff"
+                    }
+                }
+            },
+
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#fff'
+                    }
+                },
+
+            }
+            }
+        };
+
+        // Adicionando gráfico criado em div na tela
+        const myChart = new Chart(
+            document.getElementById(`myChart`),
+            config
+        );
+
+};
+
+
+    
 </script>

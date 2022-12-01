@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="shortcut icon" href="./img/Akaza_Full_Body_Design_29.jpg" type="image/x-icon">
     
     <title>Cadastro</title>
 </head>
@@ -47,39 +48,39 @@
                 <!-- <input  id="personagem_input" placeholder="Personagem favorito"> -->
 
                 <select name="" id="personagem_input">
-                    <option value="0">Escolha seu personagem</option>
-                    <option value="Rengoku">rengoku</option>
-                    <option value="Tanjirou">tanjiro</option>
-                    <option value="zenitsu">zenitsu</option>
-                    <option value="inosuke">inosuke</option>
-                    <option value="nezuko">nezuko</option>
-                    <option value="uzui">uzui</option>
-                    <option value="obanai">obanai</option>
-                    <option value="gyomei">gyomei</option>
-                    <option value="mitsuri">mitsuri</option>
-                    <option value="tomioka">tomioka</option>
-                    <option value="shinobu">shinobu</option>
-                    <option value="muichiro">muichiro</option>
-                    <option value="sanemi">sanemi</option>
-                    <option value="kokushibo">kukoshibo</option>
-                    <option value="douma">douma</option>
-                    <option value="akaza">akaza</option>
-                    <option value="hantegu">hantegu</option>
-                    <option value="nakime">nakime</option>
-                    <option value="gyokko">gyokko</option>
-                    <option value="gyultaro">gyultaro</option>
-                    <option value="daki">daki</option>
-                    <option value="kaigaku">kaigaku</option>
-                    <option value="muzan">muzan</option>
+                    <option value="">Escolha seu personagem</option>
+                    <option value="1">tanjiro</option>
+                    <option value="2">nezuko</option>
+                    <option value="3">inosuke</option>
+                    <option value="4">zenitsu</option>
+                    <option value="5">rengoku</option>
+                    <option value="6">tomioka</option>
+                    <option value="7">shinobu</option>
+                    <option value="8">mitsuri</option>
+                    <option value="9">sanemi</option>
+                    <option value="10">obanai</option>
+                    <option value="11">uzui</option>
+                    <option value="12">gyomei</option>
+                    <option value="13">muichiro</option>
+                    <option value="14">muzan</option>
+                    <option value="15">kukoshibo</option>
+                    <option value="16">douma</option>
+                    <option value="17">akaza</option>
+                    <option value="18">nakime</option>
+                    <option value="19">hantegu</option>
+                    <option value="20">gyokko</option>
+                    <option value="21">daki</option>
+                    <option value="22">gyultaro</option>
+                    <option value="23">kaigaku</option>
                 </select>
             </div>
             <div id="btn">
-                <button id='btn2' onclick="cadastrar()">
+                <button id='btn2'type='button' onclick="cadastrar()">
                     <img src="img/cadastrar.png" alt="">
                 </button>
             </div>
         </div>
-        <!-- </form> -->
+
     </div>
 
 
@@ -89,6 +90,7 @@
 </html>
 
 <script>
+    
     var favorito=[]
     var contador=0
 
@@ -100,7 +102,7 @@
         favorito.push(personagem_input.value)
         contador++
         localStorage.setItem(contador,personagem_input.value); 
-        if(contador==2){
+        if(contador==3){
             contador=0
         }
 
@@ -113,9 +115,9 @@
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
-        var personagemVar = personagem_input.value;
+        var fkpersonagemVar = personagem_input.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == ""||personagemVar=='') {
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == ""||fkpersonagemVar=='') {
             // cardErro.style.display = "block"
             // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
             alert('campos em branco')
@@ -139,21 +141,20 @@
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
-                personagemServer:personagemVar
+                fkpersonagemServer:fkpersonagemVar
             })
-        }).then(function (resposta) {
+        }).then(function (resposta){
 
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
                 // cardErro.style.display = "block";
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-                window.location = "./login.html";
-                // setTimeout(() => {
-                // }, "2000")
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, 2000)
 
-                limparFormulario();
-                finalizarAguardar();
+                // limparFormulario();
+                // finalizarAguardar();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
@@ -163,12 +164,19 @@
         });
 
         return false;
+
+        
+        nome_input.value=''
+        email_input.value=''
+        senha_input.value=''
+        confirmacao_senha_input.value=''
+        
     }
 
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
 
 
 
